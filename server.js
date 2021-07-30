@@ -1,5 +1,5 @@
 // shani - dinosaurit plotoyadit
-nodre nedr
+// arni is very noob
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
