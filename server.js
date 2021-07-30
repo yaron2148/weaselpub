@@ -1,11 +1,8 @@
-// shani - dinosaurit plotoyadit
-// arni is very noob
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
 const APP_PORT = process.env.APP_PORT || 3000;
 const app = http.createServer(requestHandler);
-//hi whats up?sdfnvm
 app.listen(APP_PORT);
 console.log(`?? HTTP Server running at ${APP_PORT}`)
 
@@ -103,5 +100,4 @@ io.on('connection', (socket) => {
       message: data.message,
     })
   })
-
-});;
+});
