@@ -113,8 +113,4 @@ io.on('connection', (socket) => {
       message: data.message,
     })
   })
-<<<<<<< HEAD
-=======
-
->>>>>>> 4cdfab35f6bb03b85854f11653503d9ef5c3df77
 });
