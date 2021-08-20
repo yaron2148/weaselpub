@@ -1,5 +1,6 @@
 // shani - dinosaurit plotoyadit
 // arni is very noob
+console.log(0);
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
@@ -8,6 +9,7 @@ const app = http.createServer(requestHandler);
 //hi whats up?sdfnvm
 app.listen(APP_PORT);
 console.log(`?? HTTP Server running at ${APP_PORT}`)
+createArea(1000);
 
 // handles all http requests to the server
 function requestHandler(request, response) {
@@ -103,4 +105,10 @@ io.on('connection', (socket) => {
       message: data.message,
     })
   })
-});;
+});
+function createArea(r){
+  let lon = Math.random()*2*Math.PI;
+  let lat = Math.random()*Math.PI;
+  let rad = Math.random()*(r/10-r/100)+(r/100);
+  console.log(lon+"lon", lat+"lat", rad+"rad");
+}
