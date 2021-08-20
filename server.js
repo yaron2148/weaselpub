@@ -9,7 +9,7 @@ const app = http.createServer(requestHandler);
 //hi whats up?sdfnvm
 app.listen(APP_PORT);
 console.log(`?? HTTP Server running at ${APP_PORT}`)
-createArea(1000);
+//screateArea(1000);
 
 // handles all http requests to the server
 function requestHandler(request, response) {
@@ -104,4 +104,24 @@ io.on('connection', (socket) => {
       user: users[data.user],
       message: data.message,
     })
-  })
+  });
+  });
+function createSingleResource(r){
+    let lat = Math.random()*Math.PI;
+    let lon = Math.random()*2*Math.PI;
+    let rad = Math.random()*(0.09*r)+(0.01*r);
+    return { lat:lat, lon:lon, rad:rad };
+}
+function createSetOfResources(r){
+    let halfArea = 2*Math.PI*r*r;
+    let totalSquare = 0;
+    let res = [];
+    do {
+       let newRes = createSingleResource(r);
+       totalSquare = totalSquare + (Math.PI * newRes.rad * newRes.rad);
+    }
+    while (totalSquare < halfArea);
+    return res;
+}
+let waterResources = createSetOfResources();
+console.log(waterResources);
