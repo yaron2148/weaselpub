@@ -105,10 +105,4 @@ io.on('connection', (socket) => {
       message: data.message,
     })
   })
-});
-function createArea(r){
-  let lon = Math.random()*2*Math.PI;
-  let lat = Math.random()*Math.PI;
-  let rad = Math.random()*(r/10-r/100)+(r/100);
-  console.log(lon+"lon", lat+"lat", rad+"rad");
-}
+
