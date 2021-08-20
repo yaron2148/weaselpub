@@ -1,10 +1,15 @@
+// shani - dinosaurit plotoyadit
+// arni is very noob
+console.log(0);
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
 const APP_PORT = process.env.APP_PORT || 3000;
 const app = http.createServer(requestHandler);
+//hi whats up?sdfnvm
 app.listen(APP_PORT);
 console.log(`?? HTTP Server running at ${APP_PORT}`)
+createArea(1000);
 
 // handles all http requests to the server
 function requestHandler(request, response) {
@@ -64,23 +69,6 @@ io.attach(app, {
 
 //...
 
-const terrainpath = './terrain.json'
- var weaster={number: 1, harim: ['gdolim', 'ktanim'], seas: ['lakes', 'oceans']};
-if (fs.existsSync(terrainpath)) {
-let rawdata = fs.readFileSync(terrainpath);
-weaster = JSON.parse(rawdata);
-    console.log("object exists");
-//file exists
-}
-else {
-       // building the terrain
-       // building water resources
-       // building resources
-       // building mountain resources
-       var json = JSON.stringify(weaster);
-       fs.writeFileSync(terrainpath, json, 'utf8');
-}
-console.log(JSON.stringify(weaster));
 // To save the list of users as id:username
 var users = {};
 // We want to save all the messages
@@ -117,8 +105,3 @@ io.on('connection', (socket) => {
       message: data.message,
     })
   })
-});
-
-function createSingleResource(r){
-
-}
