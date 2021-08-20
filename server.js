@@ -73,6 +73,10 @@ weaster = JSON.parse(rawdata);
 //file exists
 }
 else {
+       // building the terrain
+       // building water resources
+       // building resources
+       // building mountain resources
        var json = JSON.stringify(weaster);
        fs.writeFileSync(terrainpath, json, 'utf8');
 }
@@ -114,3 +118,7 @@ io.on('connection', (socket) => {
     })
   })
 });
+
+function createSingleResource(r){
+
+}
